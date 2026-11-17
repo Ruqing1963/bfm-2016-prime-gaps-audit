@@ -1,0 +1,15 @@
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.synctex.gz
+
+# local backups
+*.orig.tex
+*.orig.pdf
+
+# third-party material (the target paper), not redistributed
+src/
+1404.5094v*.pdf
+
+__pycache__/

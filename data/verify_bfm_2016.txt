@@ -1,0 +1,74 @@
+1. Theorem 4.3(i): x = 2m, 8m+1 blocks of size k/(8m+1), pair constant 4, weight 1
+   main term = x - m - 4 (x/k)^2 * #pairs ;  unordered: #pairs = k(k/(8m+1)-1)/2
+   m=1 k=      900: unordered +0.1200000000 (paper m/(8m+1)+8m^2/k = +0.1200000000, equal: True);  ordered -0.760000 = (m-8m^2)/(8m+1)+16m^2/k: True
+   m=1 k=  9000000: unordered +0.1111120000 (paper m/(8m+1)+8m^2/k = +0.1111120000, equal: True);  ordered -0.777776 = (m-8m^2)/(8m+1)+16m^2/k: True
+   m=2 k=     1700: unordered +0.1364705882 (paper m/(8m+1)+8m^2/k = +0.1364705882, equal: True);  ordered -1.727059 = (m-8m^2)/(8m+1)+16m^2/k: True
+   m=2 k= 17000000: unordered +0.1176489412 (paper m/(8m+1)+8m^2/k = +0.1176489412, equal: True);  ordered -1.764702 = (m-8m^2)/(8m+1)+16m^2/k: True
+   m=3 k=     2500: unordered +0.1488000000 (paper m/(8m+1)+8m^2/k = +0.1488000000, equal: True);  ordered -2.702400 = (m-8m^2)/(8m+1)+16m^2/k: True
+   m=3 k= 25000000: unordered +0.1200028800 (paper m/(8m+1)+8m^2/k = +0.1200028800, equal: True);  ordered -2.759994 = (m-8m^2)/(8m+1)+16m^2/k: True
+   m=4 k=     3300: unordered +0.1600000000 (paper m/(8m+1)+8m^2/k = +0.1600000000, equal: True);  ordered -3.680000 = (m-8m^2)/(8m+1)+16m^2/k: True
+   m=4 k= 33000000: unordered +0.1212160000 (paper m/(8m+1)+8m^2/k = +0.1212160000, equal: True);  ordered -3.757568 = (m-8m^2)/(8m+1)+16m^2/k: True
+   m=5 k=     4100: unordered +0.1707317073 (paper m/(8m+1)+8m^2/k = +0.1707317073, equal: True);  ordered -4.658537 = (m-8m^2)/(8m+1)+16m^2/k: True
+   m=5 k= 41000000: unordered +0.1219560976 (paper m/(8m+1)+8m^2/k = +0.1219560976, equal: True);  ordered -4.756088 = (m-8m^2)/(8m+1)+16m^2/k: True
+
+2. Theorem 4.3(ii): f(x) = x - m - 2 w x^2 / B  (leading part, k -> infinity)
+   max_x f = B/(8w) - m at x = B/(4w);  positive iff B > 8 m w
+   m=1 paper  w=m+1,B=8m^2+8m  : f(2m) =          0 ;  max =          0 at x = 2
+   m=1         w=m+1,B=8m^2+8m+1: f(2m) =       1/17 ;  max =       1/16 at x = 17/8
+   m=1         w=m+2,B=8m^2+16m+1: f(2m) =       1/25 ;  max =       1/24 at x = 25/12
+   m=1 repair w=m,  B=8m^2+1   : f(2m) =        1/9 ;  max =        1/8 at x = 9/4
+        leftover 2(m+1)(2m)^2/k at the tie = 16/k
+   m=2 paper  w=m+1,B=8m^2+8m  : f(2m) =          0 ;  max =          0 at x = 4
+   m=2         w=m+1,B=8m^2+8m+1: f(2m) =       2/49 ;  max =       1/24 at x = 49/12
+   m=2         w=m+2,B=8m^2+16m+1: f(2m) =       2/65 ;  max =       1/32 at x = 65/16
+   m=2 repair w=m,  B=8m^2+1   : f(2m) =       2/33 ;  max =       1/16 at x = 33/8
+        leftover 2(m+1)(2m)^2/k at the tie = 96/k
+   m=3 paper  w=m+1,B=8m^2+8m  : f(2m) =          0 ;  max =          0 at x = 6
+   m=3         w=m+1,B=8m^2+8m+1: f(2m) =       3/97 ;  max =       1/32 at x = 97/16
+   m=3         w=m+2,B=8m^2+16m+1: f(2m) =      3/121 ;  max =       1/40 at x = 121/20
+   m=3 repair w=m,  B=8m^2+1   : f(2m) =       3/73 ;  max =       1/24 at x = 73/12
+        leftover 2(m+1)(2m)^2/k at the tie = 288/k
+   m=4 paper  w=m+1,B=8m^2+8m  : f(2m) =          0 ;  max =          0 at x = 8
+   m=4         w=m+1,B=8m^2+8m+1: f(2m) =      4/161 ;  max =       1/40 at x = 161/20
+   m=4         w=m+2,B=8m^2+16m+1: f(2m) =      4/193 ;  max =       1/48 at x = 193/24
+   m=4 repair w=m,  B=8m^2+1   : f(2m) =      4/129 ;  max =       1/32 at x = 129/16
+        leftover 2(m+1)(2m)^2/k at the tie = 640/k
+   m=5 paper  w=m+1,B=8m^2+8m  : f(2m) =          0 ;  max =          0 at x = 10
+   m=5         w=m+1,B=8m^2+8m+1: f(2m) =      5/241 ;  max =       1/48 at x = 241/24
+   m=5         w=m+2,B=8m^2+16m+1: f(2m) =      5/281 ;  max =       1/56 at x = 281/28
+   m=5 repair w=m,  B=8m^2+1   : f(2m) =      5/201 ;  max =       1/40 at x = 201/20
+        leftover 2(m+1)(2m)^2/k at the tie = 1200/k
+   m=6 paper  w=m+1,B=8m^2+8m  : f(2m) =          0 ;  max =          0 at x = 12
+   m=6         w=m+1,B=8m^2+8m+1: f(2m) =      6/337 ;  max =       1/56 at x = 337/28
+   m=6         w=m+2,B=8m^2+16m+1: f(2m) =      6/385 ;  max =       1/64 at x = 385/32
+   m=6 repair w=m,  B=8m^2+1   : f(2m) =      6/289 ;  max =       1/48 at x = 289/24
+        leftover 2(m+1)(2m)^2/k at the tie = 2016/k
+
+3. Combinatorial step: sequences of non-empty block counts c_i in {1,2,3}, length t <= TMAX
+   m=2 w= 3/2: positive sequences   693849; (4.21) fails   373893 (first (1, 1, 2)); window fails    721 (first (1, 2, 1))
+   m=2 w=   2: positive sequences    72789; (4.21) fails    18632 (first (1, 1, 2, 1)); window fails      0 (first None)
+   m=2 w=   3: positive sequences     4457; (4.21) fails      160 (first (1, 1, 2, 1, 1)); window fails      0 (first None)
+   m=2 w=   4: positive sequences      886; (4.21) fails        0 (first None); window fails      0 (first None)
+   m=3 w= 5/2: positive sequences     9329; (4.21) fails     3361 (first (1, 1, 1, 2, 1)); window fails     60 (first (1, 1, 2, 1, 1))
+   m=3 w=   3: positive sequences     2587; (4.21) fails      414 (first (1, 1, 1, 2, 1, 1)); window fails      0 (first None)
+   m=3 w=   4: positive sequences      610; (4.21) fails       15 (first (1, 1, 1, 2, 1, 1, 1)); window fails      0 (first None)
+   m=3 w=   5: positive sequences      217; (4.21) fails        0 (first None); window fails      0 (first None)
+   m=4 w= 7/2: positive sequences      842; (4.21) fails      188 (first (1, 1, 1, 1, 2, 1, 1)); window fails      7 (first (1, 1, 1, 2, 1, 1, 1))
+   m=4 w=   4: positive sequences      271; (4.21) fails       22 (first (1, 1, 1, 1, 2, 1, 1, 1)); window fails      0 (first None)
+   m=4 w=   5: positive sequences      142; (4.21) fails        4 (first (1, 1, 1, 1, 2, 1, 1, 1, 1)); window fails      0 (first None)
+   m=4 w=   6: positive sequences       55; (4.21) fails        0 (first None); window fails      0 (first None)
+   example m=2, w=m+1=3, blocks S S D S S = (1, 1, 2, 1, 1): weight = 6 - 2 - 3*1 = 1 > 0; (4.21): False; window: True
+   paper's count (l.1933): #singletons >= m+1+m r ; correct for w=m+1: >= m+1+(m-1) r
+
+4. Lemma 5.2 bracket, 2z = c y log_2 y / log_3 y, y = exp exp exp t
+   e^-gamma = 0.561459483567;  1 - 4e^-gamma = -1.24583793427;  zero c* = e^gamma/4 = 0.445268104498;  printed 1 - e^-gamma = 0.438540516433
+   c=    0.25: limit  0.43854052;  t=4: 0.730421, t=8: 0.584481, t=20: 0.496917, t=80: 0.453135, t=400: 0.441459
+   c=0.445268: limit         0.0;  t=4: 0.375556, t=8: 0.187778, t=20: 0.0751113, t=80: 0.0187778, t=400: 0.00375556
+   c=     0.5: limit -0.12291897;  t=4: 0.266255, t=8: 0.0716681, t=20: -0.0450842, t=80: -0.10346, t=400: -0.119027
+   c=     1.0: limit  -1.2458379;  t=4: -0.856664, t=8: -1.05125, t=20: -1.168, t=80: -1.22638, t=400: -1.24195
+   (z/y_2 = c log_2 y / 2, so log(z/y_2) = log_3 y + log(c/2); log y_1 = log_2 y / 4)
+   side conditions at t=8, c=1: log(z/y_2) = 7.30685 < log y_1 = 745.239
+
+5. Corollary 1.2: kappa - 1 <= 8 -> T/8 = 12.5%;  effective constant 1/(8 H_8) = 0.045992 > 1/22 = 0.045455
+   l.2688: 9*17 = 153; (8m+1)(8m^2+8m) = 144 for m=1; 153 % 144 = 9; 153 % 9 = 0
+   repaired Theorem 4.3: k a multiple of (8m+1)(8m^2+1): m=1: 81, m=2: 561, m=3: 1825, m=4: 4257
